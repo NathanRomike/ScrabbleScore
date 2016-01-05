@@ -10,6 +10,8 @@ public class ScrabbleScore {
         return 3;
       } else  if ("fhvwy".indexOf(word) >= 0) {
         return 4;
+      } else if ("k".indexOf(word) >= 0) {
+        return 5;
       } else {
         return 0;
       }

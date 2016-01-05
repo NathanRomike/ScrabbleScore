@@ -30,4 +30,18 @@ public class ScrabbleScoreTest {
     Integer score = 4;
     assertEquals(score, scrabbleScore.countScore('f'));
   }
+
+  @Test
+  public void scrabbleScore_returnAScrabbleScoreForKLetter_5() {
+    ScrabbleScore scrabbleScore = new ScrabbleScore();
+    Integer score = 5;
+    assertEquals(score, scrabbleScore.countScore('k'));
+  }
+
+  @Test
+  public void scrabbleScore_returnAScrabbleScoreForJLetter_8() {
+    ScrabbleScore scrabbleScore = new ScrabbleScore();
+    Integer score = 8;
+    assertEquals(score, scrabbleScore.countScore('j'));
+  }
 }
