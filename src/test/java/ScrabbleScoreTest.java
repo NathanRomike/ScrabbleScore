@@ -51,4 +51,11 @@ public class ScrabbleScoreTest {
     Integer score = 10;
     assertEquals(score, scrabbleScore.countScore('z'));
   }
+
+  @Test
+  public void scrableScore_finalScoreOfWordCat_5(){
+    ScrabbleScore scrabbleScore = new ScrabbleScore();
+    Integer score = 5;
+    assertEquals(score, scrabbleScore.scoreTotal("cat"));
+  }
 }
