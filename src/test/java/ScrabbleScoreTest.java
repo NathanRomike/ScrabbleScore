@@ -23,4 +23,11 @@ public class ScrabbleScoreTest {
     Integer score = 3;
     assertEquals(score, scrabbleScore.countScore('m'));
   }
+
+  @Test
+  public void scrabbleScore_returnAScrabbleScoreForFLetter_4() {
+    ScrabbleScore scrabbleScore = new ScrabbleScore();
+    Integer score = 4;
+    assertEquals(score, scrabbleScore.countScore('f'));
+  }
 }

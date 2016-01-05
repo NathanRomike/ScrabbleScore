@@ -8,6 +8,8 @@ public class ScrabbleScore {
         return 2;
       } else if ("bcmp".indexOf(word) >= 0) {
         return 3;
+      } else  if ("fhvwy".indexOf(word) >= 0) {
+        return 4;
       } else {
         return 0;
       }
