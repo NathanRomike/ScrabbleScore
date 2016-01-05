@@ -1,7 +1,34 @@
-public class ScrabbleScore {
-  public static void main(String[] args) {}
+import java.util.Map;
+import java.util.HashMap;
+import spark.ModelAndView;
+import spark.template.velocity.VelocityTemplateEngine;
+import static spark.Spark.*;
 
-    public Integer countScore(char letter) {
+public class ScrabbleScore {
+  public static void main(String[] args) {
+    String layout = "templates/layout.vtl";
+
+    get("/", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/home.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("detector", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/detector.vtl");
+
+    String word = request.queryParams("word");
+    Integer score = scoreTotal(word);
+
+    model.put("score", score);
+    return new ModelAndView(model, layout);
+
+    }, new VelocityTemplateEngine());
+
+  }
+
+    public static Integer countScore(char letter) {
       if ( "aeioulnrst".indexOf(letter) >= 0) {
         return 1;
       } else if ("dg".indexOf(letter) >= 0) {
@@ -19,7 +46,7 @@ public class ScrabbleScore {
       }
     }
 
-    public Integer scoreTotal(String userInput) {
+    public static Integer scoreTotal(String userInput) {
       int score = 0;
       for (char s: userInput.toCharArray()) {
         score = score + countScore(s);
