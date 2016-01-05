@@ -61,6 +61,17 @@ public class ScrabbleScore {
     }
 
     public static String numberTranslator(Integer inputNumber) {
-      return "one";
+      String[] singleDigit = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
+      //String[] doubleDigit = {"twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninty"};
+      String[] teenDigit = {"eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+      if (inputNumber < 10) {
+        return singleDigit[inputNumber];
+      } else if ((inputNumber > 10) && (inputNumber <= 19)) {
+          return teenDigit[inputNumber - 11];
+      } else {
+        return "";
+      }
+        //return doubleDigit[inputNumber];
+
     }
   }
