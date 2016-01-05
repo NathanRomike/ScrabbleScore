@@ -12,6 +12,8 @@ public class ScrabbleScore {
         return 4;
       } else if ("k".indexOf(word) >= 0) {
         return 5;
+      } else if ("jx".indexOf(word) >= 0) {
+        return 8;
       } else {
         return 0;
       }
