@@ -26,6 +26,12 @@ public class ScrabbleScore {
 
     }, new VelocityTemplateEngine());
 
+    get("/numberWords", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/numberWords.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 
     public static Integer countScore(char letter) {
@@ -52,5 +58,9 @@ public class ScrabbleScore {
         score = score + countScore(s);
       }
       return score;
+    }
+
+    public static String numberTranslator(Integer inputNumber) {
+      return "one";
     }
   }
