@@ -44,4 +44,11 @@ public class ScrabbleScoreTest {
     Integer score = 8;
     assertEquals(score, scrabbleScore.countScore('j'));
   }
+
+  @Test
+  public void scrabbleScore_returnAScrabbleScoreForZLetter_10() {
+    ScrabbleScore scrabbleScore = new ScrabbleScore();
+    Integer score = 10;
+    assertEquals(score, scrabbleScore.countScore('z'));
+  }
 }
