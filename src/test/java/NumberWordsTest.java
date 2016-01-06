@@ -5,37 +5,38 @@ public class NumberWordsTest {
   @Test
   public void inputNumber_translatesNumericNumbersToWrittenWords1_one() {
     ScrabbleScore numberWord = new ScrabbleScore();
-    assertEquals("one", numberWord.numberTranslator(1));
+    assertEquals("one", numberWord.wholeNumberTranslator(1));
   }
 
   @Test
   public void inputNumber_translatesNumericNumbersToWrittenWords14_fourteen(){
     ScrabbleScore numberWord = new ScrabbleScore();
-    assertEquals("fourteen", numberWord.numberTranslator(14));
+    assertEquals("fourteen", numberWord.wholeNumberTranslator(14));
   }
 
   @Test
   public void inputNumber_translatesNumericNumbersToWrittenWords20_twenty(){
     ScrabbleScore numberWord = new ScrabbleScore();
-    assertEquals("twenty", numberWord.numberTranslator(20));
+    assertEquals("twenty", numberWord.wholeNumberTranslator(20));
   }
 
   @Test
   public void inputNumber_translatesNumericNumbersToWrittenWords22_twentytwo(){
     ScrabbleScore numberWord = new ScrabbleScore();
-    assertEquals("twenty two", numberWord.numberTranslator(22));
+    assertEquals("twenty two", numberWord.wholeNumberTranslator(22));
   }
 
   @Test
   public void inputNumber_translatesNumericNumbersToWrittenWords666_sixhundredsixtysix(){
     ScrabbleScore numberWord = new ScrabbleScore();
-    assertEquals("six hundred sixty six", numberWord.numberTranslator(666));
+    assertEquals("six hundred sixty six", numberWord.wholeNumberTranslator(666));
   }
 
   @Test
   public void inputNumber_translatesNumericNumbersToWrittenWords101_onehundredone() {
     ScrabbleScore numberWord = new ScrabbleScore();
-    assertEquals("one hundred one", numberWord.wholeNumberTranslator(101)); 
+    assertEquals("one hundred one", numberWord.wholeNumberTranslator(101));
   }
+
 
 }

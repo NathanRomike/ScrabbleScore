@@ -87,13 +87,14 @@ public class ScrabbleScore {
     }
 
     public String wholeNumberTranslator (Integer number){
-      String numeric = "ww";
+      String numeric = "";
       String convertedNumber = Integer.toString(number);
-      if (convertedNumber.length() == 3) {
-        numeric = numberTranslator(Integer.parseInt(convertedNumber.substring(0, 1))) + " hundred";
-        if (Integer.parseInt(convertedNumber.substring(1, 2)) == 0) {
-          numeric = numeric + " " + numberTranslator (Integer.parseInt(convertedNumber.substring(2, 3)));
-        }
+      if (convertedNumber.length() < 3) {
+        numeric = numberTranslator(number);
+      } else if (Integer.parseInt(convertedNumber.substring(1, 2)) == 0) {
+        numeric = numberTranslator(Integer.parseInt(convertedNumber.substring(0, 1))) + " hundred" + " " + numberTranslator (Integer.parseInt(convertedNumber.substring(2, 3)));
+      } else {
+        numeric = numberTranslator(number);
       }
       return numeric;
     }
