@@ -75,6 +75,11 @@ public class ScrabbleScore {
           int firstDigit = Integer.parseInt(Integer.toString(inputNumber).substring(0, 1));
           int secondDigit = Integer.parseInt(Integer.toString(inputNumber).substring(1, 2));
           return doubleDigit[firstDigit - 2] + " " + singleDigit[secondDigit];
+      } else if ((inputNumber > 99) && (inputNumber < 999)) {
+          int firstDigit = Integer.parseInt(Integer.toString(inputNumber).substring(0, 1));
+          int secondDigit = Integer.parseInt(Integer.toString(inputNumber).substring(1, 2));
+          int thirdDigit = Integer.parseInt(Integer.toString(inputNumber).substring(2, 3));
+          return singleDigit[firstDigit] + " " + "hundred" + " " + doubleDigit[secondDigit -2] + " " + singleDigit[thirdDigit];
       } else {
         return "asd";
       }
