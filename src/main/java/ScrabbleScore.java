@@ -68,12 +68,16 @@ public class ScrabbleScore {
         return singleDigit[inputNumber];
       } else if ((inputNumber > 10) && (inputNumber <= 19)) {
           return teenDigit[inputNumber - 11];
-      } else  if ((inputNumber > 19) && (inputNumber <=99))
-      {
-        int firstDigit = Integer.parseInt(Integer.toString(inputNumber).substring(0, 1));
-        return doubleDigit[firstDigit - 1];
+      } else  if ((inputNumber > 19) && (inputNumber <= 99) && (inputNumber % 10 == 0)) {
+          int firstDigit = Integer.parseInt(Integer.toString(inputNumber).substring(0, 1));
+          return doubleDigit[firstDigit - 2];
+      } else if ((inputNumber > 19) && (inputNumber <= 99) && (inputNumber % 10 != 0)) {
+          int firstDigit = Integer.parseInt(Integer.toString(inputNumber).substring(0, 1));
+          int secondDigit = Integer.parseInt(Integer.toString(inputNumber).substring(1, 1));
+          return doubleDigit[firstDigit - 2] + " " + singleDigit[secondDigit];
+
       } else {
-        return "";
+        return "asd";
       }
         //return doubleDigit[inputNumber];
 

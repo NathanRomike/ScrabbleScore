@@ -14,10 +14,15 @@ public class NumberWordsTest {
     assertEquals("fourteen", numberWord.numberTranslator(14));
   }
 
-  /*@Test
+  @Test
   public void inputNumber_translatesNumericNumbersToWrittenWords20_twenty(){
     ScrabbleScore numberWord = new ScrabbleScore();
     assertEquals("twenty", numberWord.numberTranslator(20));
-  } */
+  }
 
+  @Test
+  public void inputNumber_translatesNumericNumbersToWrittenWords22_twentytwo(){
+    ScrabbleScore numberWord = new ScrabbleScore();
+    assertEquals("twenty two", numberWord.numberTranslator(22));
+  }
 }
