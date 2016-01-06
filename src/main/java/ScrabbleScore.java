@@ -83,7 +83,18 @@ public class ScrabbleScore {
       } else {
         return "asd";
       }
-        //return doubleDigit[inputNumber];
 
+    }
+
+    public String wholeNumberTranslator (Integer number){
+      String numeric = "ww";
+      String convertedNumber = Integer.toString(number);
+      if (convertedNumber.length() == 3) {
+        numeric = numberTranslator(Integer.parseInt(convertedNumber.substring(0, 1))) + " hundred";
+        if (Integer.parseInt(convertedNumber.substring(1, 2)) == 0) {
+          numeric = numeric + " " + numberTranslator (Integer.parseInt(convertedNumber.substring(2, 3)));
+        }
+      }
+      return numeric;
     }
   }

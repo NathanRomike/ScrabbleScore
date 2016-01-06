@@ -31,4 +31,11 @@ public class NumberWordsTest {
     ScrabbleScore numberWord = new ScrabbleScore();
     assertEquals("six hundred sixty six", numberWord.numberTranslator(666));
   }
+
+  @Test
+  public void inputNumber_translatesNumericNumbersToWrittenWords101_onehundredone() {
+    ScrabbleScore numberWord = new ScrabbleScore();
+    assertEquals("one hundred one", numberWord.wholeNumberTranslator(101)); 
+  }
+
 }
