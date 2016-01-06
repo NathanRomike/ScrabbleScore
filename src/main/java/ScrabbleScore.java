@@ -79,7 +79,7 @@ public class ScrabbleScore {
           int firstDigit = Integer.parseInt(Integer.toString(inputNumber).substring(0, 1));
           int secondDigit = Integer.parseInt(Integer.toString(inputNumber).substring(1, 2));
           int thirdDigit = Integer.parseInt(Integer.toString(inputNumber).substring(2, 3));
-          return singleDigit[firstDigit] + " " + "hundred" + " " + doubleDigit[secondDigit -2] + " " + singleDigit[thirdDigit];
+          return singleDigit[firstDigit] + " hundred " + doubleDigit[secondDigit -2] + " " + singleDigit[thirdDigit];
       } else {
         return "asd";
       }
@@ -91,7 +91,9 @@ public class ScrabbleScore {
       String convertedNumber = Integer.toString(number);
       if (convertedNumber.length() < 3) {
         numeric = numberTranslator(number);
-      } else if (Integer.parseInt(convertedNumber.substring(1, 2)) == 0) {
+      } else if ((Integer.parseInt(convertedNumber.substring(1, 2)) == 0) && (Integer.parseInt(convertedNumber.substring(2, 3)) == 0)) {
+        numeric = numberTranslator(Integer.parseInt(convertedNumber.substring(0, 1))) + " hundred";
+      } else if ((Integer.parseInt(convertedNumber.substring(1, 2)) == 0) && (Integer.parseInt(convertedNumber.substring(2, 3)) != 0)) {
         numeric = numberTranslator(Integer.parseInt(convertedNumber.substring(0, 1))) + " hundred" + " " + numberTranslator (Integer.parseInt(convertedNumber.substring(2, 3)));
       } else {
         numeric = numberTranslator(number);

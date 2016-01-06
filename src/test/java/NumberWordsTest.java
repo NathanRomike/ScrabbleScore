@@ -38,5 +38,11 @@ public class NumberWordsTest {
     assertEquals("one hundred one", numberWord.wholeNumberTranslator(101));
   }
 
+  @Test
+  public void inputNumber_translatesNumericNumbersToWrittenWords100_onehundred() {
+    ScrabbleScore numberWord = new ScrabbleScore();
+    assertEquals("one hundred", numberWord.wholeNumberTranslator(100));
+  }
+
 
 }
