@@ -25,4 +25,10 @@ public class NumberWordsTest {
     ScrabbleScore numberWord = new ScrabbleScore();
     assertEquals("twenty two", numberWord.numberTranslator(22));
   }
+
+  @Test
+  public void inputNumber_translatesNumericNumbersToWrittenWords666_sixhundredsixtysix(){
+    ScrabbleScore numberWord = new ScrabbleScore();
+    assertEquals("six hundred sixty six", numberWord.numberTranslator(666));
+  }
 }
